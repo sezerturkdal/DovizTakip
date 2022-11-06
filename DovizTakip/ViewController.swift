@@ -13,19 +13,28 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        getData()
+    }
+    
+    func getData(){
         var ref: DatabaseReference!
         ref = Database.database().reference()
 
-        ref.child("CurrentRates/").getData(completion:  { error, snapshot in
+        ref.child("CurrentRates").getData(completion:  { [self] error, snapshot in
           guard error == nil else {
             print(error!.localizedDescription)
             return;
           }
-            let value = snapshot?.value as? NSDictionary
-            //let username = value?["username"] as? String ?? ""
             
-            print(value)
-            //let userName = snapshot?.value as? String ?? "Unknown";
+            let value = snapshot?.value as? NSDictionary
+        
+            if let jsonResult = value?["USD"] as? Dictionary<String, AnyObject> {
+                print(jsonResult)
+            }
+            if let jsonResult = value?["EUR"] as? Dictionary<String, AnyObject> {
+                print(jsonResult["BuyRate"])
+            }
+            
         });
     }
 
