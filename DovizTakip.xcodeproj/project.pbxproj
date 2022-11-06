@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69D4D6A0774BA389737FA61E /* Pods_DovizTakip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AB99B27318CB022EB3BFAA1 /* Pods_DovizTakip.framework */; };
 		E5E96D352917BDBE00AB800F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E96D342917BDBE00AB800F /* AppDelegate.swift */; };
 		E5E96D372917BDBE00AB800F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E96D362917BDBE00AB800F /* SceneDelegate.swift */; };
 		E5E96D392917BDBE00AB800F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E96D382917BDBE00AB800F /* ViewController.swift */; };
 		E5E96D3C2917BDBE00AB800F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E96D3A2917BDBE00AB800F /* Main.storyboard */; };
 		E5E96D3E2917BDC200AB800F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5E96D3D2917BDC200AB800F /* Assets.xcassets */; };
 		E5E96D412917BDC200AB800F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E96D3F2917BDC200AB800F /* LaunchScreen.storyboard */; };
+		E5E96D492917C9F200AB800F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5E96D482917C9F200AB800F /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0AB99B27318CB022EB3BFAA1 /* Pods_DovizTakip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DovizTakip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84D837D26709D2ACDD62E852 /* Pods-DovizTakip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DovizTakip.debug.xcconfig"; path = "Target Support Files/Pods-DovizTakip/Pods-DovizTakip.debug.xcconfig"; sourceTree = "<group>"; };
+		DFE0B4DA3BD017F47E0E3DFE /* Pods-DovizTakip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DovizTakip.release.xcconfig"; path = "Target Support Files/Pods-DovizTakip/Pods-DovizTakip.release.xcconfig"; sourceTree = "<group>"; };
 		E5E96D312917BDBE00AB800F /* DovizTakip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DovizTakip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5E96D342917BDBE00AB800F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5E96D362917BDBE00AB800F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +29,7 @@
 		E5E96D3D2917BDC200AB800F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5E96D402917BDC200AB800F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5E96D422917BDC200AB800F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5E96D482917C9F200AB800F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69D4D6A0774BA389737FA61E /* Pods_DovizTakip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A9362F69E3BADCD9DE5B72F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0AB99B27318CB022EB3BFAA1 /* Pods_DovizTakip.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA3C0E18BE0FF34F768A98C4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				84D837D26709D2ACDD62E852 /* Pods-DovizTakip.debug.xcconfig */,
+				DFE0B4DA3BD017F47E0E3DFE /* Pods-DovizTakip.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E5E96D282917BDBE00AB800F = {
 			isa = PBXGroup;
 			children = (
 				E5E96D332917BDBE00AB800F /* DovizTakip */,
 				E5E96D322917BDBE00AB800F /* Products */,
+				AA3C0E18BE0FF34F768A98C4 /* Pods */,
+				6A9362F69E3BADCD9DE5B72F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,6 +89,7 @@
 				E5E96D3D2917BDC200AB800F /* Assets.xcassets */,
 				E5E96D3F2917BDC200AB800F /* LaunchScreen.storyboard */,
 				E5E96D422917BDC200AB800F /* Info.plist */,
+				E5E96D482917C9F200AB800F /* GoogleService-Info.plist */,
 			);
 			path = DovizTakip;
 			sourceTree = "<group>";
@@ -74,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E5E96D452917BDC200AB800F /* Build configuration list for PBXNativeTarget "DovizTakip" */;
 			buildPhases = (
+				80FAA70D568020DB929BACE7 /* [CP] Check Pods Manifest.lock */,
 				E5E96D2D2917BDBE00AB800F /* Sources */,
 				E5E96D2E2917BDBE00AB800F /* Frameworks */,
 				E5E96D2F2917BDBE00AB800F /* Resources */,
+				7A10F157E8EDD2893C487CFA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,12 +155,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5E96D412917BDC200AB800F /* LaunchScreen.storyboard in Resources */,
+				E5E96D492917C9F200AB800F /* GoogleService-Info.plist in Resources */,
 				E5E96D3E2917BDC200AB800F /* Assets.xcassets in Resources */,
 				E5E96D3C2917BDBE00AB800F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7A10F157E8EDD2893C487CFA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DovizTakip/Pods-DovizTakip-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DovizTakip/Pods-DovizTakip-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DovizTakip/Pods-DovizTakip-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		80FAA70D568020DB929BACE7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DovizTakip-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E5E96D2D2917BDBE00AB800F /* Sources */ = {
@@ -282,6 +354,7 @@
 		};
 		E5E96D462917BDC200AB800F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84D837D26709D2ACDD62E852 /* Pods-DovizTakip.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +383,7 @@
 		};
 		E5E96D472917BDC200AB800F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFE0B4DA3BD017F47E0E3DFE /* Pods-DovizTakip.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
