@@ -15,6 +15,7 @@
 		E5E96D3E2917BDC200AB800F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5E96D3D2917BDC200AB800F /* Assets.xcassets */; };
 		E5E96D412917BDC200AB800F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E96D3F2917BDC200AB800F /* LaunchScreen.storyboard */; };
 		E5E96D492917C9F200AB800F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5E96D482917C9F200AB800F /* GoogleService-Info.plist */; };
+		E5E96D4E29184ADF00AB800F /* RateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E96D4D29184ADF00AB800F /* RateCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		E5E96D402917BDC200AB800F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5E96D422917BDC200AB800F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5E96D482917C9F200AB800F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E5E96D4D29184ADF00AB800F /* RateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		E5E96D332917BDBE00AB800F /* DovizTakip */ = {
 			isa = PBXGroup;
 			children = (
+				E5E96D4D29184ADF00AB800F /* RateCell.swift */,
 				E5E96D342917BDBE00AB800F /* AppDelegate.swift */,
 				E5E96D362917BDBE00AB800F /* SceneDelegate.swift */,
 				E5E96D382917BDBE00AB800F /* ViewController.swift */,
@@ -211,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5E96D392917BDBE00AB800F /* ViewController.swift in Sources */,
+				E5E96D4E29184ADF00AB800F /* RateCell.swift in Sources */,
 				E5E96D352917BDBE00AB800F /* AppDelegate.swift in Sources */,
 				E5E96D372917BDBE00AB800F /* SceneDelegate.swift in Sources */,
 			);
