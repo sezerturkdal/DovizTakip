@@ -8,18 +8,36 @@
 import UIKit
 import FirebaseDatabase
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
+    @IBOutlet weak var tblList: UITableView!
     var spinner = UIActivityIndicatorView(style: .large)
     var loadingView: UIView = UIView()
+    
+
+    private var allRates: [RateDetail] = []
+    private let refreshCtrl = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tblList.delegate=self
+        tblList.dataSource=self
+        setupRefreshControl()
         getData()
     }
     
-    func getData(){
+    func setupRefreshControl() {
+        if #available(iOS 10.0, *) {
+            tblList.refreshControl = refreshCtrl
+        } else {
+            tblList.addSubview(refreshCtrl)
+        }
+        refreshCtrl.addTarget(self, action: #selector(getData), for: .valueChanged)
+    }
+    
+    @objc func getData(){
         var ref: DatabaseReference!
         ref = Database.database().reference()
         showActivityIndicator()
@@ -30,14 +48,26 @@ class ViewController: UIViewController {
           }
             
             let value = snapshot?.value as? NSDictionary
-        
             if let jsonResult = value?["USD"] as? Dictionary<String, AnyObject> {
                 print(jsonResult)
+                let singleData = RateDetail(
+                    Code: jsonResult["Code"] as! String,
+                    BuyRate: jsonResult["BuyRate"] as! String,
+                    Name: jsonResult["Name"] as! String,
+                    SellRate: jsonResult["SellRate"] as! String,
+                    Flag: "")
+                self.allRates.append(singleData)
             }
             if let jsonResult = value?["EUR"] as? Dictionary<String, AnyObject> {
-                print(jsonResult["BuyRate"])
+                let singleData = RateDetail(
+                    Code: jsonResult["Code"] as! String,
+                    BuyRate: jsonResult["BuyRate"] as! String,
+                    Name: jsonResult["Name"] as! String,
+                    SellRate: jsonResult["SellRate"] as! String,
+                    Flag: "")
+                self.allRates.append(singleData)
             }
-            
+            tblList.reloadData()
         });
         hideActivityIndicator()
     }
@@ -66,6 +96,24 @@ class ViewController: UIViewController {
             self.loadingView.removeFromSuperview()
     }
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.allRates.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellRate") as? RateCell else { return UITableViewCell() }
+        if(allRates.isEmpty){
+            return cell
+        }
+        let rateData = allRates[indexPath.row]
+        cell.lbl_currencyName.text = rateData.Name
+        cell.lbl_rate.text = String(rateData.SellRate)
+        cell.img_flag.image = UIImage(named: "US")
+
+        // UIImage(named: "\(rateData.Flag.lowercased())")
+        return cell
+        }
 
 }
 
