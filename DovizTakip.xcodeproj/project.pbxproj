@@ -86,8 +86,7 @@
 		E5E96D332917BDBE00AB800F /* DovizTakip */ = {
 			isa = PBXGroup;
 			children = (
-				E533DCC7291C1A6B00344D27 /* RatesDetailModel.swift */,
-				E5E96D4D29184ADF00AB800F /* RateCell.swift */,
+				E5FE4EDD291D89B30022E28A /* Models */,
 				E5E96D342917BDBE00AB800F /* AppDelegate.swift */,
 				E5E96D362917BDBE00AB800F /* SceneDelegate.swift */,
 				E5E96D382917BDBE00AB800F /* ViewController.swift */,
@@ -98,6 +97,15 @@
 				E5E96D482917C9F200AB800F /* GoogleService-Info.plist */,
 			);
 			path = DovizTakip;
+			sourceTree = "<group>";
+		};
+		E5FE4EDD291D89B30022E28A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E533DCC7291C1A6B00344D27 /* RatesDetailModel.swift */,
+				E5E96D4D29184ADF00AB800F /* RateCell.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
