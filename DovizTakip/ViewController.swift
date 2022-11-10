@@ -46,26 +46,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             print(error!.localizedDescription)
             return;
           }
-            
             let value = snapshot?.value as? NSDictionary
-            if let jsonResult = value?["USD"] as? Dictionary<String, AnyObject> {
-                print(jsonResult)
-                let singleData = RateDetail(
-                    Code: jsonResult["Code"] as! String,
-                    BuyRate: jsonResult["BuyRate"] as! String,
-                    Name: jsonResult["Name"] as! String,
-                    SellRate: jsonResult["SellRate"] as! String,
-                    Flag: "")
-                self.allRates.append(singleData)
-            }
-            if let jsonResult = value?["EUR"] as? Dictionary<String, AnyObject> {
-                let singleData = RateDetail(
-                    Code: jsonResult["Code"] as! String,
-                    BuyRate: jsonResult["BuyRate"] as! String,
-                    Name: jsonResult["Name"] as! String,
-                    SellRate: jsonResult["SellRate"] as! String,
-                    Flag: "")
-                self.allRates.append(singleData)
+            
+            let currencyArray = ["USD","EUR","CAD","GBP","AUD","CHF"]
+            for currency in currencyArray{
+                if let jsonResult = value?[currency] as? Dictionary<String, AnyObject> {
+                    let singleData = RateDetail(
+                        Code: jsonResult["Code"] as! String,
+                        BuyRate: jsonResult["BuyRate"] as! String,
+                        Name: jsonResult["Name"] as! String,
+                        SellRate: jsonResult["SellRate"] as! String,
+                        Flag: "")
+                    self.allRates.append(singleData)
+                }
             }
             tblList.reloadData()
         });
@@ -107,13 +100,44 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return cell
         }
         let rateData = allRates[indexPath.row]
+        
+        let sellPrice = Double(rateData.SellRate)
+        
         cell.lbl_currencyName.text = rateData.Name
-        cell.lbl_rate.text = String(rateData.SellRate)
-        cell.img_flag.image = UIImage(named: "US")
-
-        // UIImage(named: "\(rateData.Flag.lowercased())")
+        cell.lbl_rate.text = String(format: "%.2f", sellPrice ?? 0) + " ₺"
+        
+        let flag  = UIImage(named: rateData.Name)
+        
+        let size = CGSize(width: 100, height: 100)
+        cell.img_flag.image =  resizeImage(image: flag!, targetSize: size)
         return cell
+    }
+    
+    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+
+        let widthRatio  = targetSize.width  / image.size.width
+        let heightRatio = targetSize.height / image.size.height
+
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
         }
+
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return newImage!
+    }
 
 }
 
