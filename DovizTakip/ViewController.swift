@@ -7,17 +7,18 @@
 
 import UIKit
 import FirebaseDatabase
+import Network
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NetworkCheckObserver {
     
-    
+   
     @IBOutlet weak var tblList: UITableView!
     var spinner = UIActivityIndicatorView(style: .large)
     var loadingView: UIView = UIView()
-    
 
     private var allRates: [RateDetail] = []
     private let refreshCtrl = UIRefreshControl()
+    var networkCheck = NetworkCheck.sharedInstance()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tblList.dataSource=self
         setupRefreshControl()
         getData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        networkCheck.addObserver(observer: self)
+        if networkCheck.currentStatus == .unsatisfied{
+            noInternetConnectionAlert()
+        }
     }
     
     func setupRefreshControl() {
@@ -40,6 +48,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @objc func getData(){
         allRates=[]
         tblList.reloadData()
+        
+        if networkCheck.currentStatus == .unsatisfied{
+            noInternetConnectionAlert()
+            refreshCtrl.endRefreshing()
+            hideActivityIndicator()
+            return;
+        }
         var ref: DatabaseReference!
         ref = Database.database().reference()
         showActivityIndicator()
@@ -140,6 +155,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         UIGraphicsEndImageContext()
 
         return newImage!
+    }
+    
+    func noInternetConnectionAlert(){
+        let alert=UIAlertController(title: "Warning", message: "No internet connection!", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+    }
+    
+    func statusDidChange(status: NWPath.Status) {
+        if status == .satisfied{
+            getData()
+        }else{
+            noInternetConnectionAlert()
+        }
     }
 
 }
