@@ -30,14 +30,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func setupRefreshControl() {
         if #available(iOS 10.0, *) {
-            tblList.refreshControl = refreshCtrl
+            self.tblList.refreshControl = refreshCtrl
         } else {
             tblList.addSubview(refreshCtrl)
         }
-        refreshCtrl.addTarget(self, action: #selector(getData), for: .valueChanged)
+        refreshCtrl.addTarget(self, action: #selector(self.getData), for: UIControl.Event.valueChanged)
     }
     
     @objc func getData(){
+        allRates=[]
+        tblList.reloadData()
         var ref: DatabaseReference!
         ref = Database.database().reference()
         showActivityIndicator()
@@ -62,6 +64,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
             tblList.reloadData()
         });
+        refreshCtrl.endRefreshing()
         hideActivityIndicator()
     }
     
@@ -101,10 +104,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         let rateData = allRates[indexPath.row]
         
-        let sellPrice = Double(rateData.SellRate)
+        let buyPrice = Double(rateData.BuyRate)
         
         cell.lbl_currencyName.text = rateData.Name
-        cell.lbl_rate.text = String(format: "%.2f", sellPrice ?? 0) + " ₺"
+        cell.lbl_rate.text = String(format: "%.2f", buyPrice ?? 0) + " ₺"
         
         let flag  = UIImage(named: rateData.Name)
         
