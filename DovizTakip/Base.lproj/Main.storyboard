@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DovizTakip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="DovizTakip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,11 +93,46 @@
                     </view>
                     <connections>
                         <outlet property="tblList" destination="Pg1-lH-P4b" id="tOe-3Y-5il"/>
+                        <segue destination="FFW-j0-JsN" kind="showDetail" identifier="toDetailsVC" id="aEs-Ft-4CB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="46.564885496183201" y="-28.87323943661972"/>
+        </scene>
+        <!--Currency Detail View-->
+        <scene sceneID="fWW-g4-B7P">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="FFW-j0-JsN" customClass="CurrencyDetailView" customModule="DovizTakip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="currencyDetailVC" id="Lwa-Ed-J0M">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SiW-xH-IbX">
+                                <rect key="frame" x="91" y="329" width="211" height="126"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yOS-cj-B7W"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SiW-xH-IbX" firstAttribute="centerX" secondItem="Lwa-Ed-J0M" secondAttribute="centerX" id="A0g-n1-knD"/>
+                            <constraint firstItem="SiW-xH-IbX" firstAttribute="leading" secondItem="yOS-cj-B7W" secondAttribute="leading" constant="91" id="n9x-aj-v5J"/>
+                            <constraint firstItem="SiW-xH-IbX" firstAttribute="top" secondItem="yOS-cj-B7W" secondAttribute="top" constant="226" id="th0-vj-8bo"/>
+                            <constraint firstItem="yOS-cj-B7W" firstAttribute="bottom" secondItem="SiW-xH-IbX" secondAttribute="bottom" constant="363" id="xgj-Dt-o7Z"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="3Ew-hJ-Ioj"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <connections>
+                        <outlet property="lblCode" destination="SiW-xH-IbX" id="jum-mQ-seA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sEE-ww-SZR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="872.51908396946567" y="-17.605633802816904"/>
         </scene>
     </scenes>
     <resources>

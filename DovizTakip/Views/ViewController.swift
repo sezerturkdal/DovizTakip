@@ -18,6 +18,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     private var allRates: [RateDetail] = []
     private let refreshCtrl = UIRefreshControl()
+    private var chosenCurrenyCode = ""
     var networkCheck = NetworkCheck.sharedInstance()
 
     override func viewDidLoad() {
@@ -130,6 +131,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.img_flag.image =  resizeImage(image: flag!, targetSize: size)
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        chosenCurrenyCode = allRates[indexPath.row].Code 
+        performSegue(withIdentifier: "toDetailsVC", sender: nil)
+    }
     
     func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
         let size = image.size
@@ -169,6 +174,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }else{
             noInternetConnectionAlert()
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier=="toDetailsVC"
+            {
+                let destinationVC=segue.destination as!CurrencyDetailView
+                destinationVC.selectedCurrency = chosenCurrenyCode
+            }
     }
 
 }
