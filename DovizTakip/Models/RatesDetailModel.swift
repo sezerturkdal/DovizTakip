@@ -20,3 +20,20 @@ struct RateDetail: Decodable {
     let SellRate: String
     let Flag: String
 }
+
+class SelectedCurrency: Decodable {
+    var Code: String
+    var BuyRate: String
+    var Name: String
+    var SellRate: String
+    var Flag: String
+    
+    init() {
+        Code = "";
+        BuyRate="";
+        Name="";
+        SellRate="";
+        Flag="";
+        }
+}
+

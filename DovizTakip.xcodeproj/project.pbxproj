@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		69D4D6A0774BA389737FA61E /* Pods_DovizTakip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AB99B27318CB022EB3BFAA1 /* Pods_DovizTakip.framework */; };
 		E533DCC8291C1A6B00344D27 /* RatesDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533DCC7291C1A6B00344D27 /* RatesDetailModel.swift */; };
+		E535B37529A8153400E35983 /* WeeklyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E535B37429A8153400E35983 /* WeeklyModel.swift */; };
 		E5C157B729A7EF5800CF5D28 /* CurrencyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C157B629A7EF5800CF5D28 /* CurrencyDetailView.swift */; };
 		E5E96D352917BDBE00AB800F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E96D342917BDBE00AB800F /* AppDelegate.swift */; };
 		E5E96D372917BDBE00AB800F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E96D362917BDBE00AB800F /* SceneDelegate.swift */; };
@@ -26,6 +27,7 @@
 		84D837D26709D2ACDD62E852 /* Pods-DovizTakip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DovizTakip.debug.xcconfig"; path = "Target Support Files/Pods-DovizTakip/Pods-DovizTakip.debug.xcconfig"; sourceTree = "<group>"; };
 		DFE0B4DA3BD017F47E0E3DFE /* Pods-DovizTakip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DovizTakip.release.xcconfig"; path = "Target Support Files/Pods-DovizTakip/Pods-DovizTakip.release.xcconfig"; sourceTree = "<group>"; };
 		E533DCC7291C1A6B00344D27 /* RatesDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesDetailModel.swift; sourceTree = "<group>"; };
+		E535B37429A8153400E35983 /* WeeklyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyModel.swift; sourceTree = "<group>"; };
 		E5C157B629A7EF5800CF5D28 /* CurrencyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDetailView.swift; sourceTree = "<group>"; };
 		E5E96D312917BDBE00AB800F /* DovizTakip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DovizTakip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5E96D342917BDBE00AB800F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			children = (
 				E533DCC7291C1A6B00344D27 /* RatesDetailModel.swift */,
 				E5E96D4D29184ADF00AB800F /* RateCell.swift */,
+				E535B37429A8153400E35983 /* WeeklyModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				E5E96D352917BDBE00AB800F /* AppDelegate.swift in Sources */,
 				E5C157B729A7EF5800CF5D28 /* CurrencyDetailView.swift in Sources */,
 				E5E96D372917BDBE00AB800F /* SceneDelegate.swift in Sources */,
+				E535B37529A8153400E35983 /* WeeklyModel.swift in Sources */,
 				E5FE4EE0291D8ABA0022E28A /* NetworkCheck.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

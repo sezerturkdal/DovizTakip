@@ -18,7 +18,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     private var allRates: [RateDetail] = []
     private let refreshCtrl = UIRefreshControl()
-    private var chosenCurrenyCode = ""
+    
+    private var chosenCurreny = SelectedCurrency()
+    
     var networkCheck = NetworkCheck.sharedInstance()
 
     override func viewDidLoad() {
@@ -142,7 +144,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        chosenCurrenyCode = allRates[indexPath.row].Code 
+        chosenCurreny.Code = allRates[indexPath.row].Code
+        chosenCurreny.Flag = allRates[indexPath.row].Flag
+        chosenCurreny.SellRate = allRates[indexPath.row].SellRate
+        chosenCurreny.BuyRate = allRates[indexPath.row].BuyRate
+        chosenCurreny.Name = allRates[indexPath.row].Name
         performSegue(withIdentifier: "toDetailsVC", sender: nil)
     }
     
@@ -190,7 +196,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             if segue.identifier=="toDetailsVC"
             {
                 let destinationVC=segue.destination as!CurrencyDetailView
-                destinationVC.selectedCurrency = chosenCurrenyCode
+                destinationVC.selectedCurrency = chosenCurreny
             }
     }
 
