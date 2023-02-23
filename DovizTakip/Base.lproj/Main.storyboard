@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jLA-vt-5qq">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Pg1-lH-P4b">
-                                <rect key="frame" x="16" y="127" width="361" height="691"/>
+                                <rect key="frame" x="16" y="171" width="361" height="647"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellRate" id="8Mf-qP-WeX" customClass="RateCell" customModule="DovizTakip" customModuleProvider="target">
@@ -73,7 +73,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Güncel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nzf-vI-mHH">
-                                <rect key="frame" x="127" y="80" width="139" height="40.666666666666657"/>
+                                <rect key="frame" x="127" y="124.00000000000001" width="139" height="40.666666666666671"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -91,14 +91,15 @@
                             <constraint firstItem="Pg1-lH-P4b" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="oGN-rO-DfE"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="9Sa-fW-8Mx"/>
                     <connections>
                         <outlet property="tblList" destination="Pg1-lH-P4b" id="tOe-3Y-5il"/>
-                        <segue destination="FFW-j0-JsN" kind="showDetail" identifier="toDetailsVC" id="aEs-Ft-4CB"/>
+                        <segue destination="FFW-j0-JsN" kind="show" identifier="toDetailsVC" id="aEs-Ft-4CB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="46.564885496183201" y="-28.87323943661972"/>
+            <point key="canvasLocation" x="973.28244274809151" y="-28.87323943661972"/>
         </scene>
         <!--Currency Detail View-->
         <scene sceneID="fWW-g4-B7P">
@@ -125,14 +126,31 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3Ew-hJ-Ioj"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <connections>
                         <outlet property="lblCode" destination="SiW-xH-IbX" id="jum-mQ-seA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sEE-ww-SZR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="872.51908396946567" y="-17.605633802816904"/>
+            <point key="canvasLocation" x="1799.2366412213739" y="-17.605633802816904"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rml-GJ-nj3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jLA-vt-5qq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dDi-zk-HO9">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="6ue-gd-DMd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sgg-ou-32q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="46.564885496183201" y="-28.87323943661972"/>
         </scene>
     </scenes>
     <resources>
