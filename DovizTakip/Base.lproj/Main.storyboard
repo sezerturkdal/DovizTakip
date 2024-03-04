@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jLA-vt-5qq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jLA-vt-5qq">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -155,6 +156,11 @@
                                     <constraint firstItem="SiW-xH-IbX" firstAttribute="leading" secondItem="C8M-yY-q3T" secondAttribute="leading" constant="91" id="cFd-HJ-cJE"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VMA-fg-W3Q" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="384" width="361" height="235"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yOS-cj-B7W"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -170,6 +176,7 @@
                         <outlet property="lblBuyRate" destination="83c-0f-KJV" id="49q-kA-Cq2"/>
                         <outlet property="lblCode" destination="SiW-xH-IbX" id="jum-mQ-seA"/>
                         <outlet property="lblSellRate" destination="GyI-6d-M88" id="jcY-WZ-XVd"/>
+                        <outlet property="lineChartView" destination="VMA-fg-W3Q" id="hsJ-Jn-Cup"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sEE-ww-SZR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

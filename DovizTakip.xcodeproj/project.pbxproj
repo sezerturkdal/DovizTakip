@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		69D4D6A0774BA389737FA61E /* Pods_DovizTakip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AB99B27318CB022EB3BFAA1 /* Pods_DovizTakip.framework */; };
+		22A3D70DB28AEA122BCBD0F7 /* Pods_DovizTakip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB7A5F2DCA684710F6261A79 /* Pods_DovizTakip.framework */; };
 		E533DCC8291C1A6B00344D27 /* RatesDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533DCC7291C1A6B00344D27 /* RatesDetailModel.swift */; };
 		E535B37529A8153400E35983 /* WeeklyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E535B37429A8153400E35983 /* WeeklyModel.swift */; };
 		E5C157B729A7EF5800CF5D28 /* CurrencyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C157B629A7EF5800CF5D28 /* CurrencyDetailView.swift */; };
@@ -23,9 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0AB99B27318CB022EB3BFAA1 /* Pods_DovizTakip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DovizTakip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		84D837D26709D2ACDD62E852 /* Pods-DovizTakip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DovizTakip.debug.xcconfig"; path = "Target Support Files/Pods-DovizTakip/Pods-DovizTakip.debug.xcconfig"; sourceTree = "<group>"; };
-		DFE0B4DA3BD017F47E0E3DFE /* Pods-DovizTakip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DovizTakip.release.xcconfig"; path = "Target Support Files/Pods-DovizTakip/Pods-DovizTakip.release.xcconfig"; sourceTree = "<group>"; };
+		127D8C410CE6CC413F6A1731 /* Pods-DovizTakip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DovizTakip.release.xcconfig"; path = "Target Support Files/Pods-DovizTakip/Pods-DovizTakip.release.xcconfig"; sourceTree = "<group>"; };
+		40365EAF230BCE8257182802 /* Pods-DovizTakip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DovizTakip.debug.xcconfig"; path = "Target Support Files/Pods-DovizTakip/Pods-DovizTakip.debug.xcconfig"; sourceTree = "<group>"; };
+		DB7A5F2DCA684710F6261A79 /* Pods_DovizTakip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DovizTakip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E533DCC7291C1A6B00344D27 /* RatesDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesDetailModel.swift; sourceTree = "<group>"; };
 		E535B37429A8153400E35983 /* WeeklyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyModel.swift; sourceTree = "<group>"; };
 		E5C157B629A7EF5800CF5D28 /* CurrencyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDetailView.swift; sourceTree = "<group>"; };
@@ -47,17 +47,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69D4D6A0774BA389737FA61E /* Pods_DovizTakip.framework in Frameworks */,
+				22A3D70DB28AEA122BCBD0F7 /* Pods_DovizTakip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6A9362F69E3BADCD9DE5B72F /* Frameworks */ = {
+		3BEECC0DFD83EE8F7805C3DF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0AB99B27318CB022EB3BFAA1 /* Pods_DovizTakip.framework */,
+				DB7A5F2DCA684710F6261A79 /* Pods_DovizTakip.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -65,8 +65,8 @@
 		AA3C0E18BE0FF34F768A98C4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				84D837D26709D2ACDD62E852 /* Pods-DovizTakip.debug.xcconfig */,
-				DFE0B4DA3BD017F47E0E3DFE /* Pods-DovizTakip.release.xcconfig */,
+				40365EAF230BCE8257182802 /* Pods-DovizTakip.debug.xcconfig */,
+				127D8C410CE6CC413F6A1731 /* Pods-DovizTakip.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -86,7 +86,7 @@
 				E5E96D332917BDBE00AB800F /* DovizTakip */,
 				E5E96D322917BDBE00AB800F /* Products */,
 				AA3C0E18BE0FF34F768A98C4 /* Pods */,
-				6A9362F69E3BADCD9DE5B72F /* Frameworks */,
+				3BEECC0DFD83EE8F7805C3DF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,11 +140,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E5E96D452917BDC200AB800F /* Build configuration list for PBXNativeTarget "DovizTakip" */;
 			buildPhases = (
-				80FAA70D568020DB929BACE7 /* [CP] Check Pods Manifest.lock */,
+				F1BFDA4A9870426594D0C380 /* [CP] Check Pods Manifest.lock */,
 				E5E96D2D2917BDBE00AB800F /* Sources */,
 				E5E96D2E2917BDBE00AB800F /* Frameworks */,
 				E5E96D2F2917BDBE00AB800F /* Resources */,
-				7A10F157E8EDD2893C487CFA /* [CP] Embed Pods Frameworks */,
+				9E4354D91EBFD942DC867076 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -203,7 +203,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7A10F157E8EDD2893C487CFA /* [CP] Embed Pods Frameworks */ = {
+		9E4354D91EBFD942DC867076 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -220,7 +220,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DovizTakip/Pods-DovizTakip-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		80FAA70D568020DB929BACE7 /* [CP] Check Pods Manifest.lock */ = {
+		F1BFDA4A9870426594D0C380 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -398,7 +398,7 @@
 		};
 		E5E96D462917BDC200AB800F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84D837D26709D2ACDD62E852 /* Pods-DovizTakip.debug.xcconfig */;
+			baseConfigurationReference = 40365EAF230BCE8257182802 /* Pods-DovizTakip.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -412,6 +412,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -427,7 +428,7 @@
 		};
 		E5E96D472917BDC200AB800F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DFE0B4DA3BD017F47E0E3DFE /* Pods-DovizTakip.release.xcconfig */;
+			baseConfigurationReference = 127D8C410CE6CC413F6A1731 /* Pods-DovizTakip.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -441,6 +442,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
