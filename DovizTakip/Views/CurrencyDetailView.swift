@@ -10,12 +10,8 @@ import FirebaseDatabase
 import SwiftChart
 import Charts
 
-
-
 class CurrencyDetailView: UIViewController {
 
-    
-    
     @IBOutlet weak var lineChartView: LineChartView!
     @IBOutlet weak var lblSellRate: UILabel!
     @IBOutlet weak var lblBuyRate: UILabel!
@@ -47,14 +43,13 @@ class CurrencyDetailView: UIViewController {
         components.month = Int(fullDateArr[1])
         components.day = Int(fullDateArr[2])
         
-        let calendar = Calendar.current
+        var calendar = Calendar.current
         let date = calendar.date(from: components)
         
         var currencyDate = ""
         
         if #available(iOS 15.0, *) {
-            let fff = date?.formatted(date: .abbreviated, time: .omitted) //date?.formatted(Date.FormatStyle().weekday(.abbreviated))
-            currencyDate = fff ?? ""
+            currencyDate = date?.formatted(date: .abbreviated, time: .omitted) ?? ""
         }
         return currencyDate
     }
@@ -69,13 +64,8 @@ class CurrencyDetailView: UIViewController {
           }
             let value = snapshot?.value as? NSDictionary
             
-          //  print(value)
-            
             let keys = value?.keyEnumerator()
-            let values = value?.objectEnumerator()
            
-          
-            
             while let key = keys?.nextObject() {
                 let price = value?.object(forKey: key)
                 let singleData = WeeklyModel()
@@ -86,9 +76,7 @@ class CurrencyDetailView: UIViewController {
                    
                 weeklyRates.append(singleData)
                 print(singleData.CurrencyDate)
-               // print("\(key)= \(value)")
             }
-           // print(weeklyRates)
             let screen = UIScreen.main.bounds
             let screenWidth = screen.size.width
             let screenHeight = screen.size.height
@@ -114,14 +102,28 @@ class CurrencyDetailView: UIViewController {
             // Grafik veri setini oluştur
             let dataSet = LineChartDataSet(entries: data, label: selectedCurrency.Code)
             dataSet.colors = [NSUIColor.blue] // Çizgi rengi
-                    
+            
+            dataSet.fillAlpha = 0.2
+            dataSet.lineWidth = 2
+            dataSet.drawCircleHoleEnabled = true
+            dataSet.drawCirclesEnabled = true
+            dataSet.drawValuesEnabled = true
+            dataSet.highlightColor = .blue
+            dataSet.circleRadius = CGFloat(8.0)
+            dataSet.lineCapType = .round
+            dataSet.mode = .horizontalBezier
+            dataSet.drawFilledEnabled = true
+            dataSet.fillColor = .blue
+            dataSet.axisDependency = .right
             // Grafiği güncelle
             let data1 = LineChartData(dataSet: dataSet)
             lineChartView.data = data1
-        
+            
             // X eksenini ayarla
             lineChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: currencyDates)
             lineChartView.xAxis.granularity = 1
+            lineChartView.xAxis.labelTextColor = .blue
+            lineChartView.xAxis.labelPosition = .bottom
                     
             // Animasyon ekle
             lineChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
