@@ -28,6 +28,10 @@ class CurrencyDetailView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let backButton = UIBarButtonItem()
+        backButton.title = "Geri"
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        
         //nvgBar.title = selectedCurrency.Code
         let buyPrice = Double(selectedCurrency.BuyRate)
         let sellPrice = Double(selectedCurrency.SellRate)

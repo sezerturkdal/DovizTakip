@@ -19,6 +19,7 @@ struct RateDetail: Decodable {
     let Name: String
     let SellRate: String
     let Flag: String
+    let Time: String
 }
 
 class SelectedCurrency: Decodable {

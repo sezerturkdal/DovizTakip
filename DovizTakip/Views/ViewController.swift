@@ -17,6 +17,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var loadingView: UIView = UIView()
 
     private var allRates: [RateDetail] = []
+    @IBOutlet weak var lbl_LastUpdate: UILabel!
     private let refreshCtrl = UIRefreshControl()
     
     private var chosenCurreny = SelectedCurrency()
@@ -86,14 +87,32 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         BuyRate: jsonResult["BuyRate"] as! String,
                         Name: jsonResult["Name"] as! String,
                         SellRate: jsonResult["SellRate"] as! String,
-                        Flag: jsonResult["Code"] as! String)
+                        Flag: jsonResult["Code"] as! String,
+                        Time: jsonResult["Time"] as! String)
                     self.allRates.append(singleData)
                 }
+            }
+            if let firstRate = self.allRates.first {
+                lbl_LastUpdate.text = "Son güncellenme zamanı : " + setDateFormat(dt: firstRate.Time)
             }
             tblList.reloadData()
         });
         refreshCtrl.endRefreshing()
         hideActivityIndicator()
+    }
+    
+    func setDateFormat(dt:String) -> String{
+        var formattedDate = ""
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy HH:mm:ss"
+
+        if let date = dateFormatter.date(from: dt) {
+            dateFormatter.dateFormat = "dd.MM.yyyy HH:mm"
+            formattedDate = dateFormatter.string(from: date)
+        } else {
+            print("Invalid date string format")
+        }
+        return formattedDate
     }
     
     func showActivityIndicator() {

@@ -74,8 +74,14 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Güncel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nzf-vI-mHH">
-                                <rect key="frame" x="127" y="124.00000000000001" width="139" height="40.666666666666671"/>
+                                <rect key="frame" x="127" y="87" width="139" height="40.666666666666657"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Son güncellenme zamanı :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gJ-CR-NOk">
+                                <rect key="frame" x="13" y="135" width="366" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -84,16 +90,20 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Nzf-vI-mHH" firstAttribute="centerX" secondItem="Pg1-lH-P4b" secondAttribute="centerX" id="3ul-f1-bri"/>
-                            <constraint firstItem="Nzf-vI-mHH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="21" id="IA5-b1-iIc"/>
-                            <constraint firstItem="Pg1-lH-P4b" firstAttribute="top" secondItem="Nzf-vI-mHH" secondAttribute="bottom" constant="6.3333333333333428" id="KiR-YZ-JkB"/>
+                            <constraint firstItem="9gJ-CR-NOk" firstAttribute="centerX" secondItem="Nzf-vI-mHH" secondAttribute="centerX" id="7Ry-R9-bZ2"/>
+                            <constraint firstItem="Nzf-vI-mHH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-16" id="IA5-b1-iIc"/>
+                            <constraint firstItem="Pg1-lH-P4b" firstAttribute="top" secondItem="Nzf-vI-mHH" secondAttribute="bottom" constant="43.333333333333329" id="KiR-YZ-JkB"/>
+                            <constraint firstItem="9gJ-CR-NOk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="13" id="Nju-X0-IJr"/>
                             <constraint firstItem="Pg1-lH-P4b" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Ohx-8S-fG5"/>
                             <constraint firstItem="Nzf-vI-mHH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="127" id="RFZ-nW-IEf"/>
+                            <constraint firstItem="9gJ-CR-NOk" firstAttribute="top" secondItem="Nzf-vI-mHH" secondAttribute="bottom" constant="7.3333333333333428" id="ddO-k3-1kR"/>
                             <constraint firstItem="Pg1-lH-P4b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gS4-oV-Ftc"/>
                             <constraint firstItem="Pg1-lH-P4b" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="oGN-rO-DfE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9Sa-fW-8Mx"/>
                     <connections>
+                        <outlet property="lbl_LastUpdate" destination="9gJ-CR-NOk" id="W7G-Oj-AxP"/>
                         <outlet property="tblList" destination="Pg1-lH-P4b" id="tOe-3Y-5il"/>
                         <segue destination="FFW-j0-JsN" kind="show" identifier="toDetailsVC" id="aEs-Ft-4CB"/>
                     </connections>
