@@ -78,7 +78,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
           }
             let value = snapshot?.value as? NSDictionary
             
-            let currencyArray = ["USD","EUR","CAD","GBP","AUD","CHF"]
+            let currencyArray = ["USD","EUR","CAD","GBP","AUD","CHF","DKK","NOK"]
             for currency in currencyArray{
                 if let jsonResult = value?[currency] as? Dictionary<String, AnyObject> {
                     let singleData = RateDetail(
@@ -86,7 +86,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         BuyRate: jsonResult["BuyRate"] as! String,
                         Name: jsonResult["Name"] as! String,
                         SellRate: jsonResult["SellRate"] as! String,
-                        Flag: "")
+                        Flag: jsonResult["Code"] as! String)
                     self.allRates.append(singleData)
                 }
             }

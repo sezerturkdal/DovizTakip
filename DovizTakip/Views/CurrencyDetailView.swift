@@ -12,9 +12,11 @@ import Charts
 
 class CurrencyDetailView: UIViewController {
 
+    @IBOutlet weak var nvgBar: UINavigationItem!
     @IBOutlet weak var lineChartView: LineChartView!
     @IBOutlet weak var lblSellRate: UILabel!
     @IBOutlet weak var lblBuyRate: UILabel!
+    @IBOutlet weak var imgFlag: UIImageView!
     @IBOutlet weak var lblCode: UILabel!
     
     private var weeklyRates: [WeeklyModel] = []
@@ -26,12 +28,15 @@ class CurrencyDetailView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //nvgBar.title = selectedCurrency.Code
         let buyPrice = Double(selectedCurrency.BuyRate)
         let sellPrice = Double(selectedCurrency.SellRate)
         
-        lblCode.text=selectedCurrency.Code
-        lblBuyRate.text=String(format: "%.2f", buyPrice ?? 0) + " ₺"
-        lblSellRate.text=String(format: "%.2f", sellPrice ?? 0) + " ₺"
+        
+        lblCode.text = ExchangeRateNames.getByCode(selectedCurrency.Code) // selectedCurrency.Name
+        lblBuyRate.text = "Alış Fiyatı  : " + String(format: "%.2f", buyPrice ?? 0) + " ₺"
+        lblSellRate.text = "Satış Fiyatı : " + String(format: "%.2f", sellPrice ?? 0) + " ₺"
+        imgFlag.image = UIImage(named: selectedCurrency.Flag)
         
         getWeeklyData()
     }
@@ -43,7 +48,7 @@ class CurrencyDetailView: UIViewController {
         components.month = Int(fullDateArr[1])
         components.day = Int(fullDateArr[2])
         
-        var calendar = Calendar.current
+        let calendar = Calendar.current
         let date = calendar.date(from: components)
         
         var currencyDate = ""
