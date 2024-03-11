@@ -31,6 +31,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tblList.dataSource=self
         setupRefreshControl()
         getData()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,7 +80,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
           }
             let value = snapshot?.value as? NSDictionary
             
-            let currencyArray = ["USD","EUR","CAD","GBP","AUD","CHF","DKK","NOK"]
+            let currencyArray = ["USD","EUR","CAD","GBP","AUD","CHF","DKK","NOK","QAR","SEK","XAU"]
             for currency in currencyArray{
                 if let jsonResult = value?[currency] as? Dictionary<String, AnyObject> {
                     let singleData = RateDetail(
@@ -152,9 +153,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let rateData = allRates[indexPath.row]
         
         let buyPrice = Double(rateData.BuyRate)
+        let sellPrice = Double(rateData.SellRate)
         
         cell.lbl_currencyName.text = rateData.Name
         cell.lbl_rate.text = String(format: "%.2f", buyPrice ?? 0) + " ₺"
+        cell.lbl_sellRate.text = String(format: "%.2f", sellPrice ?? 0) + " ₺"
         
         let flag  = UIImage(named: rateData.Name)
         

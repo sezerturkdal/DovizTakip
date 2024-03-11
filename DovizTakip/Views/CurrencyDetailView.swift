@@ -90,7 +90,18 @@ class CurrencyDetailView: UIViewController {
             let screenWidth = screen.size.width
             let screenHeight = screen.size.height
             
-            weeklyRates.sort { $0.CurrencyDate < $1.CurrencyDate }
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM d, yyyy"
+
+            let sortedCurrencyRates = weeklyRates.sorted {
+                guard let date1 = dateFormatter.date(from: $0.CurrencyDate),
+                      let date2 = dateFormatter.date(from: $1.CurrencyDate) else {
+                          return false
+                }
+                return date1 < date2
+            }
+            weeklyRates = sortedCurrencyRates
             
             weeklyRates.forEach { item in
                 let crr = String(item.CurrencyDate.dropLast(6))

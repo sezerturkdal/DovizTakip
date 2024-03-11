@@ -12,6 +12,7 @@ class RateCell: UITableViewCell {
 
     
     @IBOutlet weak var lbl_rate: UILabel!
+    @IBOutlet weak var lbl_sellRate: UILabel!
     @IBOutlet weak var lbl_currencyName: UILabel!
     @IBOutlet weak var img_flag: UIImageView!
     

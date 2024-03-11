@@ -25,10 +25,16 @@ struct ExchangeRateNames {
             exchangeRate = "Euro"
         case "GBP":
             exchangeRate = "İngiliz Sterlini"
+        case "QAR":
+            exchangeRate = "Katar Riyali"
         case "NOK":
             exchangeRate = "Norveç Kronu"
+        case "SEK":
+            exchangeRate = "İsveç Kronu"
         case "USD":
             exchangeRate = "Amerikan Doları"
+        case "XAU":
+            exchangeRate = "Gram Altın"
         default:
             exchangeRate = ""
         }
