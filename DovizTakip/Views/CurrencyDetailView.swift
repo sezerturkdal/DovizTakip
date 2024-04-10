@@ -28,6 +28,8 @@ class CurrencyDetailView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        overrideUserInterfaceStyle = .light
+        
         let backButton = UIBarButtonItem()
         backButton.title = "Geri"
         navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
@@ -131,10 +133,11 @@ class CurrencyDetailView: UIViewController {
             dataSet.highlightColor = .blue
             dataSet.circleRadius = CGFloat(8.0)
             dataSet.lineCapType = .round
-            dataSet.mode = .horizontalBezier
+            dataSet.mode = .cubicBezier
             dataSet.drawFilledEnabled = true
             dataSet.fillColor = .blue
             dataSet.axisDependency = .right
+          
             // Grafiği güncelle
             let data1 = LineChartData(dataSet: dataSet)
             lineChartView.data = data1

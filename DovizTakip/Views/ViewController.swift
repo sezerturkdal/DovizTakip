@@ -27,6 +27,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        overrideUserInterfaceStyle = .light
+        
         tblList.delegate=self
         tblList.dataSource=self
         setupRefreshControl()
@@ -78,6 +80,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             print(error!.localizedDescription)
             return;
           }
+            self.allRates.removeAll()
             let value = snapshot?.value as? NSDictionary
             
             let currencyArray = ["USD","EUR","CAD","GBP","AUD","CHF","DKK","NOK","QAR","SEK","XAU"]
