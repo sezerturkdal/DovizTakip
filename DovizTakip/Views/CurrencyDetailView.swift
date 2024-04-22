@@ -43,7 +43,7 @@ class CurrencyDetailView: UIViewController {
         vwMinPrice.layer.borderColor = UIColor.lightGray.cgColor
         
         // Gradient renklerini tanımlayın
-                let startColor = UIColorFromHex("#cacccc").cgColor
+                let startColor = UIColorFromHex("#a2c7db").cgColor
                 let endColor = UIColorFromHex("#d3dbdb").cgColor
                 
                 // Gradient layer'ı oluşturun
@@ -60,8 +60,8 @@ class CurrencyDetailView: UIViewController {
         
         
         lblCode.text = ExchangeRateNames.getByCode(selectedCurrency.Code) // selectedCurrency.Name
-        lblBuyRate.text = "Alış Fiyatı  : " + String(format: "%.2f", buyPrice ?? 0) + " ₺"
-        lblSellRate.text = "Satış Fiyatı : " + String(format: "%.2f", sellPrice ?? 0) + " ₺"
+        lblBuyRate.text = String(format: "%.2f", buyPrice ?? 0) + " ₺"
+        lblSellRate.text = String(format: "%.2f", sellPrice ?? 0) + " ₺"
         imgFlag.image = UIImage(named: selectedCurrency.Flag)
         
         getWeeklyData()

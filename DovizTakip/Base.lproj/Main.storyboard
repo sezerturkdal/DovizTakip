@@ -191,8 +191,8 @@
                                             <constraint firstAttribute="height" constant="43" id="EJG-66-nBH"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alış Fiyatı" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83c-0f-KJV">
-                                        <rect key="frame" x="9" y="63" width="180" height="40"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83c-0f-KJV">
+                                        <rect key="frame" x="9" y="72" width="180" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="180" id="k9V-fN-wNd"/>
                                         </constraints>
@@ -200,26 +200,46 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Satış Fiyatı" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyI-6d-M88">
-                                        <rect key="frame" x="204" y="63" width="180" height="40"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyI-6d-M88">
+                                        <rect key="frame" x="204" y="72" width="180" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alış Fiyatı" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1O8-1e-afW">
+                                        <rect key="frame" x="9" y="52" width="180" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Satış Fiyatı" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEG-40-XFF">
+                                        <rect key="frame" x="204" y="52" width="180" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="83c-0f-KJV" firstAttribute="top" secondItem="PwM-n3-9aE" secondAttribute="bottom" constant="8" symbolic="YES" id="98c-z7-ExX"/>
+                                    <constraint firstItem="1O8-1e-afW" firstAttribute="baseline" secondItem="TEG-40-XFF" secondAttribute="baseline" id="5ZO-Zi-dl9"/>
+                                    <constraint firstItem="83c-0f-KJV" firstAttribute="top" secondItem="PwM-n3-9aE" secondAttribute="bottom" constant="17" id="98c-z7-ExX"/>
                                     <constraint firstItem="83c-0f-KJV" firstAttribute="baseline" secondItem="GyI-6d-M88" secondAttribute="baseline" id="BCo-oH-sAm"/>
-                                    <constraint firstAttribute="bottom" secondItem="83c-0f-KJV" secondAttribute="bottom" constant="17" id="IKp-0f-wfA"/>
+                                    <constraint firstItem="GyI-6d-M88" firstAttribute="leading" secondItem="1O8-1e-afW" secondAttribute="trailing" constant="15" id="EUt-t0-XWe"/>
+                                    <constraint firstAttribute="bottom" secondItem="1O8-1e-afW" secondAttribute="bottom" constant="38" id="FBj-rV-WuP"/>
+                                    <constraint firstAttribute="bottom" secondItem="83c-0f-KJV" secondAttribute="bottom" constant="8" id="IKp-0f-wfA"/>
                                     <constraint firstAttribute="trailing" secondItem="GyI-6d-M88" secondAttribute="trailing" constant="9" id="Im7-Hs-ifk"/>
                                     <constraint firstItem="SiW-xH-IbX" firstAttribute="centerX" secondItem="C8M-yY-q3T" secondAttribute="centerX" id="KKf-Jh-ASm"/>
                                     <constraint firstItem="SiW-xH-IbX" firstAttribute="leading" secondItem="PwM-n3-9aE" secondAttribute="trailing" constant="22" id="Kaw-c1-bCy"/>
+                                    <constraint firstItem="TEG-40-XFF" firstAttribute="trailing" secondItem="GyI-6d-M88" secondAttribute="trailing" id="NMc-5I-ksJ"/>
                                     <constraint firstItem="83c-0f-KJV" firstAttribute="firstBaseline" secondItem="GyI-6d-M88" secondAttribute="firstBaseline" id="PXi-Pe-xsr"/>
-                                    <constraint firstItem="83c-0f-KJV" firstAttribute="top" secondItem="SiW-xH-IbX" secondAttribute="bottom" constant="8" symbolic="YES" id="QsR-Gm-PYZ"/>
+                                    <constraint firstItem="83c-0f-KJV" firstAttribute="top" secondItem="SiW-xH-IbX" secondAttribute="bottom" constant="17" id="QsR-Gm-PYZ"/>
                                     <constraint firstItem="SiW-xH-IbX" firstAttribute="top" secondItem="C8M-yY-q3T" secondAttribute="top" constant="12" id="ZvR-YL-cHe"/>
+                                    <constraint firstItem="1O8-1e-afW" firstAttribute="centerX" secondItem="83c-0f-KJV" secondAttribute="centerX" id="cq5-jk-vxn"/>
                                     <constraint firstAttribute="trailing" secondItem="SiW-xH-IbX" secondAttribute="trailing" constant="91" id="lKJ-CU-q21"/>
                                     <constraint firstItem="GyI-6d-M88" firstAttribute="leading" secondItem="83c-0f-KJV" secondAttribute="trailing" constant="15" id="nQB-kq-vRW"/>
                                     <constraint firstItem="83c-0f-KJV" firstAttribute="leading" secondItem="C8M-yY-q3T" secondAttribute="leading" constant="9" id="obG-nZ-0ov"/>
+                                    <constraint firstItem="1O8-1e-afW" firstAttribute="top" secondItem="C8M-yY-q3T" secondAttribute="top" constant="52" id="p4U-Hh-EWB"/>
+                                    <constraint firstItem="TEG-40-XFF" firstAttribute="leading" secondItem="83c-0f-KJV" secondAttribute="trailing" constant="15" id="pzK-Mm-21g"/>
+                                    <constraint firstItem="1O8-1e-afW" firstAttribute="firstBaseline" secondItem="TEG-40-XFF" secondAttribute="firstBaseline" id="qGw-uR-toT"/>
                                     <constraint firstItem="SiW-xH-IbX" firstAttribute="top" secondItem="PwM-n3-9aE" secondAttribute="top" id="xqA-ti-Z6Y"/>
                                 </constraints>
                             </view>
