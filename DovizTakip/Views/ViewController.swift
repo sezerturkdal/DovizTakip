@@ -83,7 +83,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.allRates.removeAll()
             let value = snapshot?.value as? NSDictionary
             
-            let currencyArray = ["USD","EUR","CAD","GBP","AUD","CHF","DKK","NOK","QAR","SEK","XAU"]
+            let currencyArray = ["USD","EUR","CAD","GBP","AUD","CHF","DKK","NOK","SEK","XAU"]
             for currency in currencyArray{
                 if let jsonResult = value?[currency] as? Dictionary<String, AnyObject> {
                     let singleData = RateDetail(
