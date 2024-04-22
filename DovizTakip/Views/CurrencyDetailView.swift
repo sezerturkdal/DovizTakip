@@ -18,6 +18,11 @@ class CurrencyDetailView: UIViewController {
     @IBOutlet weak var lblBuyRate: UILabel!
     @IBOutlet weak var imgFlag: UIImageView!
     @IBOutlet weak var lblCode: UILabel!
+    @IBOutlet weak var lblMaxPrice: UILabel!
+    @IBOutlet weak var lblMinPrice: UILabel!
+    @IBOutlet weak var vwMaxPrice: UIView!
+    @IBOutlet weak var vwMinPrice: UIView!
+    @IBOutlet weak var vwHeader: UIView!
     
     private var weeklyRates: [WeeklyModel] = []
     var selectedCurrency = SelectedCurrency()
@@ -34,6 +39,21 @@ class CurrencyDetailView: UIViewController {
         backButton.title = "Geri"
         navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
+        vwMaxPrice.layer.borderColor = UIColor.lightGray.cgColor
+        vwMinPrice.layer.borderColor = UIColor.lightGray.cgColor
+        
+        // Gradient renklerini tanımlayın
+                let startColor = UIColorFromHex("#cacccc").cgColor
+                let endColor = UIColorFromHex("#d3dbdb").cgColor
+                
+                // Gradient layer'ı oluşturun
+                let gradientLayer = CAGradientLayer()
+                gradientLayer.frame = vwHeader.bounds
+                gradientLayer.colors = [startColor, endColor]
+                
+                // Gradient'ı ekrana ekleyin
+        vwHeader.layer.insertSublayer(gradientLayer, at: 0)
+        
         //nvgBar.title = selectedCurrency.Code
         let buyPrice = Double(selectedCurrency.BuyRate)
         let sellPrice = Double(selectedCurrency.SellRate)
@@ -45,6 +65,21 @@ class CurrencyDetailView: UIViewController {
         imgFlag.image = UIImage(named: selectedCurrency.Flag)
         
         getWeeklyData()
+    }
+    
+    func UIColorFromHex(_ hex: String) -> UIColor {
+        var hexSanitized = hex.trimmingCharacters(in: .whitespacesAndNewlines)
+        hexSanitized = hexSanitized.replacingOccurrences(of: "#", with: "")
+        
+        var rgb: UInt64 = 0
+        
+        Scanner(string: hexSanitized).scanHexInt64(&rgb)
+        
+        let red = CGFloat((rgb & 0xFF0000) >> 16) / 255.0
+        let green = CGFloat((rgb & 0x00FF00) >> 8) / 255.0
+        let blue = CGFloat(rgb & 0x0000FF) / 255.0
+        
+        return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
     }
     
     func getNameOfDay(dt : String) -> String{
@@ -111,37 +146,51 @@ class CurrencyDetailView: UIViewController {
                 currencyPrices.append(Double(item.Price) ?? 0)
             }
             
-            let data: [ChartDataEntry] = [
-                ChartDataEntry(x: 0.0, y: currencyPrices[0]),
-                ChartDataEntry(x: 1.0, y: currencyPrices[1]),
-                ChartDataEntry(x: 2.0, y: currencyPrices[2]),
-                ChartDataEntry(x: 3.0, y: currencyPrices[3]),
-                ChartDataEntry(x: 4.0, y: currencyPrices[4]),
-                ChartDataEntry(x: 5.0, y: currencyPrices[5]),
-                ChartDataEntry(x: 6.0, y: currencyPrices[6])
-            ]
+            if let maxPrice = currencyPrices.max() {
+                lblMaxPrice.text = "\(String(format: "%.2f", maxPrice)) ₺"
+            } else {
+                lblMaxPrice.text = "0.00 ₺"
+            }
             
-            // Grafik veri setini oluştur
-            let dataSet = LineChartDataSet(entries: data, label: selectedCurrency.Code)
-            dataSet.colors = [NSUIColor.blue] // Çizgi rengi
+            if let minPrice = currencyPrices.min() {
+                lblMinPrice.text = "\(String(format: "%.2f", minPrice)) ₺"
+            } else {
+                lblMinPrice.text = "0.00 ₺"
+            }
             
-            dataSet.fillAlpha = 0.2
-            dataSet.lineWidth = 2
-            dataSet.drawCircleHoleEnabled = true
-            dataSet.drawCirclesEnabled = true
-            dataSet.drawValuesEnabled = true
-            dataSet.highlightColor = .blue
-            dataSet.circleRadius = CGFloat(8.0)
-            dataSet.lineCapType = .round
-            dataSet.mode = .cubicBezier
-            dataSet.drawFilledEnabled = true
-            dataSet.fillColor = .blue
-            dataSet.axisDependency = .right
-          
-            // Grafiği güncelle
-            let data1 = LineChartData(dataSet: dataSet)
-            lineChartView.data = data1
-            
+            if currencyPrices.count >= 7 {
+                
+                let data: [ChartDataEntry] = [
+                    ChartDataEntry(x: 0.0, y: currencyPrices[0]),
+                    ChartDataEntry(x: 1.0, y: currencyPrices[1]),
+                    ChartDataEntry(x: 2.0, y: currencyPrices[2]),
+                    ChartDataEntry(x: 3.0, y: currencyPrices[3]),
+                    ChartDataEntry(x: 4.0, y: currencyPrices[4]),
+                    ChartDataEntry(x: 5.0, y: currencyPrices[5]),
+                    ChartDataEntry(x: 6.0, y: currencyPrices[6])
+                ]
+                
+                // Grafik veri setini oluştur
+                let dataSet = LineChartDataSet(entries: data, label: selectedCurrency.Code)
+                dataSet.colors = [NSUIColor.blue] // Çizgi rengi
+                
+                dataSet.fillAlpha = 0.2
+                dataSet.lineWidth = 2
+                dataSet.drawCircleHoleEnabled = true
+                dataSet.drawCirclesEnabled = true
+                dataSet.drawValuesEnabled = true
+                dataSet.highlightColor = .blue
+                dataSet.circleRadius = CGFloat(8.0)
+                dataSet.lineCapType = .round
+                dataSet.mode = .cubicBezier
+                dataSet.drawFilledEnabled = true
+                dataSet.fillColor = .blue
+                dataSet.axisDependency = .right
+                
+                // Grafiği güncelle
+                let data1 = LineChartData(dataSet: dataSet)
+                lineChartView.data = data1
+            }
             // X eksenini ayarla
             lineChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: currencyDates)
             lineChartView.xAxis.granularity = 1
